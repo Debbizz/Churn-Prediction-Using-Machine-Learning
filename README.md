@@ -1,22 +1,48 @@
-# Customer Churn Prediction
+# **Customer Churn Prediction - ConnectTel**
 
-This project trains a machine learning model to predict customer churn based on various customer attributes and service usage patterns.
+## **Problem Statement**
+Customer churn is a major challenge for telecommunications companies. Losing customers can significantly impact revenue and growth. The goal of this project is to develop a machine learning model that accurately predicts customer churn, allowing ConnectTel to implement targeted retention strategies.
 
-## Features
-- Data preprocessing for numerical and categorical features
-- Feature scaling using MinMaxScaler
-- One-hot encoding for categorical variables
-- Model training and evaluation
-- Visualization of churn patterns
-- Function to predict churn probability from user input
+## **Dataset Description**
+The dataset contains multiple features related to customer demographics, services subscribed, and billing information. Key attributes include:
 
-## Installation
+- **CustomerID**: Unique identifier for each customer
+- **Demographics**: Gender, SeniorCitizen, Partner, Dependents
+- **Subscription Details**: PhoneService, InternetService, MultipleLines
+- **Additional Services**: OnlineSecurity, OnlineBackup, TechSupport, StreamingTV, StreamingMovies
+- **Billing Information**: Contract Type, PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges
+- **Churn**: Whether the customer has left (1) or stayed (0)
+
+## **Steps Taken**
+### **1. Data Preprocessing**
+- Handled missing values and outliers
+- Converted categorical variables using One-Hot Encoding
+- Scaled numerical features using MinMaxScaler
+
+### **2. Exploratory Data Analysis (EDA)**
+- Visualized churn distribution using pie charts and bar graphs
+- Analyzed correlations between features and churn rate
+
+### **3. Feature Engineering**
+- Created new features to enhance model performance
+- Removed highly correlated or redundant features
+
+### **4. Model Training & Evaluation**
+- Split data into training and validation sets
+- Used **Logistic Regression** as the primary model
+- Evaluated performance using **accuracy, precision, recall, and AUC-ROC scores**
+
+### **5. Prediction Function**
+- Created a function to predict churn probability based on user input
+- Returns a tuple with churn classification (**True/False**) and probability score
+
+## **Installation**
 Clone the repository and install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## **Usage**
 Example input for making predictions:
 ```python
 new_input = {
@@ -43,14 +69,13 @@ new_input = {
 predict_input(new_input)
 ```
 
-## Model Output
+## **Model Output**
 The model returns a tuple:
-- `0` or `1` (Indicating No Churn or Churn)
-- Probability Score
+- **0** (False) - Customer is **not likely to churn**
+- **1** (True) - Customer is **likely to churn**
+- **Probability Score** - Confidence level of the prediction
 
-If `0`, return **False** (No Churn); otherwise, return **True** (Churn).
-
-## Data Visualization
+## **Data Visualization**
 Below is an example pie chart showing the churn distribution:
 ```python
 import matplotlib.pyplot as plt
@@ -58,4 +83,3 @@ df['Churn'].value_counts().plot.pie(autopct='%1.1f%%', startangle=90, colors=['l
 plt.title('Customer Churn Distribution')
 plt.ylabel('')
 plt.show()
-```

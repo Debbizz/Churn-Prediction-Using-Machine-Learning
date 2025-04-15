@@ -4,9 +4,8 @@ import joblib  # Import joblib
 import os
 
 # Absolute paths
-model_path = r"C:\Users\hp\Documents\GitHub\Churn-Prediction-Using-Machine-Learning\customer_churn_model.pkl"
-encoder_path = r"C:\Users\hp\Documents\GitHub\Churn-Prediction-Using-Machine-Learning\encoders.pkl"
-
+model_path = "customer_churn_model.pkl"
+encoder_path = "encoders.pkl"
 
 
 # Load the saved model and feature names

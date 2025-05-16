@@ -1,5 +1,7 @@
 # **Customer Churn Prediction - ConnectTel**
 
+## 🩺 [Churn Prediction App](https://churn-prediction-application-sol.streamlit.app/)
+
 ## **Problem Statement**
 Customer churn is a major challenge for telecommunications companies. Losing customers can significantly impact revenue and growth. The goal of this project is to develop a machine learning model that accurately predicts customer churn, allowing ConnectTel to implement targeted retention strategies.
 
